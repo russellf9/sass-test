@@ -1,0 +1,34 @@
+$primaryColor: #eeccff;
+$backgroundColor: #1abc9c;
+
+
+body {
+    $primaryColor: #ccc !global;
+    background: $primaryColor;
+}
+
+p {
+    color: $primaryColor;
+}
+
+// When compiled, our paragraph selector's color is #eeccff
+
+$container-width: 100%;
+$column-count: 4;
+$margin: 1%;
+
+.container {
+    width: $container-width;
+
+
+}
+
+.column {
+//    background : $backgroundColor;
+    background: #1abc9c;
+    display: block;
+    float: left;
+    width: ( $container-width / $column-count ) - ( $margin * 2 );
+    height: 200px;
+    margin: 0 $margin;
+}

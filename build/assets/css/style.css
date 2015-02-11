@@ -1,0 +1,16 @@
+body {
+  background: #ccc; }
+
+p {
+  color: #ccc; }
+
+.container {
+  width: 100%; }
+
+.column {
+  background: #1abc9c;
+  display: block;
+  float: left;
+  width: 23%;
+  height: 200px;
+  margin: 0 1%; }

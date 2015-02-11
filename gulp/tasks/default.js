@@ -1,3 +1,10 @@
+var gulp = require('gulp');
+
 /**
- * Created by factornine on 11/02/2015.
+ * Start browsersync task and then watch files for changes
  */
+gulp.task('watch', ['browsersync'], function() {
+
+});
+
+gulp.task('default', ['watch']);

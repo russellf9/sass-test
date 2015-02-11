@@ -1,3 +1,50 @@
-/**
- * Created by factornine on 11/02/2015.
- */
+var src               = 'app';
+var build             = 'build';
+var development       = 'build/development';
+var production        = 'build/production';
+var srcAssets         = 'app/_assets';
+var developmentAssets = 'build/assets';
+var productionAssets  = 'build/production/assets';
+
+module.exports = {
+    browsersync: {
+        development: {
+            server: {
+                baseDir: [development, build, src]
+            },
+            port: 9999,
+            files: [
+                developmentAssets + '/css/*.css',
+                developmentAssets + '/js/*.js',
+                developmentAssets + '/images/**',
+                developmentAssets + '/fonts/*'
+            ]
+        }
+    },
+    delete: {
+        src: [developmentAssets]
+    },
+    sass: {
+        src:  srcAssets + '/scss/**/*.{sass,scss}',
+        dest: developmentAssets + '/css',
+        options: {
+            noCache: true,
+            compass: false,
+            bundleExec: true,
+            sourcemap: true,
+            sourcemapPath: '../../_assets/scss'
+        }
+    },
+    autoprefixer: {
+        browsers: [
+            'last 2 versions',
+            'safari 5',
+            'ie 8',
+            'ie 9',
+            'opera 12.1',
+            'ios 6',
+            'android 4'
+        ],
+        cascade: true
+    }
+};

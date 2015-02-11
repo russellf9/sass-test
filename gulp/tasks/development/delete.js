@@ -1,3 +1,10 @@
+var gulp   = require('gulp');
+var del    = require('del');
+var config = require('../../config').delete;
+
 /**
- * Created by factornine on 11/02/2015.
+ * Delete folders and files
  */
+gulp.task('delete', function(callback) {
+    del(config.src, callback);
+});
