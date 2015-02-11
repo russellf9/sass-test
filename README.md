@@ -72,6 +72,6 @@ $container-width: 100%;
 
 * This is the tutorial I`m following:
 [Getting Started with SASS](https://scotch.io/tutorials/getting-started-with-sass)
-Mike Streety Github - [gulpfile](https://gist.github.com/mikestreety/9525414)
+* Mike Streety Github - [gulpfile](https://gist.github.com/mikestreety/9525414)
 * [Introduction to Gulp.js 1: Intro and Setup](http://stefanimhoff.de/2014/gulp-tutorial-1-intro-setup/)
 * [gulp-tutorial-4-css-generation-sass](http://stefanimhoff.de/2014/gulp-tutorial-4-css-generation-sass/)
