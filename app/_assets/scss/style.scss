@@ -1,160 +1,63 @@
 @import "_colors";
 
-// variable scope
-body {
-    $primaryColor: #ccc !global;
-    background: $primaryColor;
+// a map of settings
+$settings: (
+    maxWidth: 800px,
+    columns: 12,
+    margin: 15px,
+    breakpoints: (
+        xs: "(max-width : 480px)",
+        sm: "(max-width : 768px) and (min-width: 481px)",
+        md: "(max-width : 1024px)  and (min-width: 769px)",
+        lg: "(min-width : 1025px)"
+    )
+);
 
-}
-
-$navHeight: 75px;
-
-nav {
-    margin-top: 100px;
-    height: $navHeight;
-    text-align: center;
-    background: $secondaryColor;
-    padding-top: 10px; // TODO use flex box
-}
-
-p {
-    color: $primaryColor;
-}
-
-// math
-$container-width: 100%;
-$container-height: 225px;
-$column-count: 4;
-$margin: 1%;
-
-.container {
-    width: $container-width;
-    height: $container-height;
-}
-
-// note replaced by function directive
-//.column {
-//    background: $backgroundColor;
-//    display: block;
-//    float: left;
-//    width: ( $container-width / $column-count ) - ( $margin * 2 );
-//    height: 200px;
-//    margin: 0 $margin;
-//}
-
-//functions
-$buttonColor: #2ecc71;
-$buttonDark: darken($buttonColor, 10%);
-$buttonDarker: darken($buttonDark, 10%);
-
-button {
-    background: $buttonColor;
-    border-radius: 3px;
-    box-shadow: 0 5px 0 $buttonDark;
-    border: 0;
-    color: white;
-    font-size: 17px;
-    padding: 10px 30px;
-    margin: 0 10px;
-    display: inline-block;
-    outline: 0;
-    &:hover {
-        background: $buttonDark;
-        box-shadow: 0px 5px 0px $buttonDarker;
+// a mixin that renders our framework
+@mixin renderGridStyles($settings) {
+    .container {
+        padding-right: map-get($settings, "margin");
+        padding-left: map-get($settings, "margin");
+        margin-right: auto;
+        margin-left: auto;
+        max-width: map-get($settings, "maxWidth");
     }
-    &:active {
-        box-shadow: none;
-        margin-top: 5px;
+
+    .row {
+        margin-right: map-get($settings, "margin") * -1;
+        margin-left: map-get($settings, "margin") * -1;
+    }
+    $breakpoints: map-get($settings, "breakpoints");
+    @each $key, $breakpoint in $breakpoints {
+        @include media($breakpoint) {
+            @include renderGrid($key, $settings);
+        }
     }
 }
 
-.footer {
-    display: block;
-    padding: 10px 30px;
-    margin: 20px 10px;
-}
-
-// &amp and pseudo selectors
-a.myAnchor {
-    color: blue;
-    &:hover {
-        text-decoration: underline;
-    }
-    &:visited {
-        color: purple;
+@mixin renderGrid($key, $settings) {
+    $i: 1;
+    @while $i <= map-get($settings, "columns") {
+        .col-#{$key}-#{$i} {
+            float: left;
+            width: 100% * $i / map-get($settings,"columns");
+        }
+        $i: $i+1;
     }
 }
 
-// Extends & Placeholders
-//.input {
-//    border-radius: 3px;
-//    border: 4px solid #ddd;
-//    color: #555;
-//    font-size: 17px;
-//    padding: 10px 20px;
-//    display: inline-block;
-//    min-width: 275px;
-//    outline: 0;
-//}
-
-//.error-input {
-//    @extend .input;
-//    border:4px solid $warning;
-//}
-
-//%input-style {
-//    font-size: 14px;
-//}
-//
-//input {
-//    @extend %input-style;
-//    color: black;
-//}
-
-%input-style {
-    border-radius: 3px;
-    color: #555;
-    font-size: 17px;
-    padding: 10px 20px;
-    display: inline-block;
-    min-width: 275px;
-    outline: 0;
-}
-
-.input {
-    @extend %input-style;
-    border: 4px solid #ddd;
-}
-
-.error-input {
-    @extend %input-style;
-    border: 4px solid #e74c3c;
-}
-
-// Mixins
 @mixin media($queryString){
     @media #{$queryString} {
         @content;
     }
 }
 
-.media-container {
-    width: 900px;
-    @include media("(max-width: 767px)"){
-        width: 100%;
-    }
-}
+@include renderGridStyles($settings);
 
-// Function Directives
-@function getColumnWidth($width, $columns, $margin) {
-    @return ($width / $columns) - ($margin * 2);
-}
 
-.column {
-    background: $backgroundColor;
-    height: 200px;
-    display: block;
-    float: left;
-    width: getColumnWidth($container-width,$column-count,$margin);
-    margin: 0 $margin;
+p {
+    padding: 20px;
+    color: white;
+    background: #9b59b6;
+    margin: 20px;
 }
