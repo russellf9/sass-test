@@ -65,6 +65,34 @@ $container-width: 100%;
 }
 ```
 
+#### Functions
+
+```
+$buttonColor: #2ecc71;
+$buttonDark: darken($buttonColor, 10%);
+$buttonDarker: darken($buttonDark, 10%);
+
+button {
+    background: $buttonColor;
+    border-radius: 3px;
+    box-shadow: 0 5px 0 $buttonDark;
+    border: 0;
+    color: white;
+    font-size: 17px;
+    padding: 10px 30px;
+    margin: 0 10px;
+    display: inline-block;
+    outline: 0;
+    &:hover {
+        background: $buttonDark;
+        box-shadow: 0px 5px 0px $buttonDarker;
+    }
+    &:active {
+        box-shadow: none;
+        margin-top: 5px;
+    }
+}
+```
 
 
 
