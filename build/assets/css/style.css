@@ -40,3 +40,15 @@ button {
   button:active {
     box-shadow: none;
     margin-top: 5px; }
+
+.footer {
+  display: block;
+  padding: 10px 30px;
+  margin: 20px 10px; }
+
+a.myAnchor {
+  color: blue; }
+  a.myAnchor:hover {
+    text-decoration: underline; }
+  a.myAnchor:visited {
+    color: purple; }

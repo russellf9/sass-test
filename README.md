@@ -94,6 +94,35 @@ button {
 }
 ```
 
+#### Nesting and parent reference
+
+Using the `&amp;` symbol.
+
+```
+a.myAnchor {
+    color: blue;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:visited {
+        color: purple;
+    }
+}
+```
+
+de-nest, with the `@at-root` directive.
+
+```
+.first-component {
+    .text { font-size: 1.4rem; }
+    .button { font-size: 1.7rem; }
+    @at-root .second-component {
+        .text { font-size: 1.2rem; }
+        .button { font-size: 1.4rem; }
+    }
+}
+```
+
 
 
 ### Links
