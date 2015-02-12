@@ -32,14 +32,15 @@ $margin: 1%;
     height: $container-height;
 }
 
-.column {
-    background: $backgroundColor;
-    display: block;
-    float: left;
-    width: ( $container-width / $column-count ) - ( $margin * 2 );
-    height: 200px;
-    margin: 0 $margin;
-}
+// note replaced by function directive
+//.column {
+//    background: $backgroundColor;
+//    display: block;
+//    float: left;
+//    width: ( $container-width / $column-count ) - ( $margin * 2 );
+//    height: 200px;
+//    margin: 0 $margin;
+//}
 
 //functions
 $buttonColor: #2ecc71;
@@ -144,4 +145,16 @@ a.myAnchor {
     }
 }
 
+// Function Directives
+@function getColumnWidth($width, $columns, $margin) {
+    @return ($width / $columns) - ($margin * 2);
+}
 
+.column {
+    background: $backgroundColor;
+    height: 200px;
+    display: block;
+    float: left;
+    width: getColumnWidth($container-width,$column-count,$margin);
+    margin: 0 $margin;
+}

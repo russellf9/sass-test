@@ -177,6 +177,28 @@ See:
 * [sass-mq](https://github.com/sass-mq/sass-mq)
 
 
+#### Function Directive
+
+```
+$container-width: 100%;
+$column-count: 4;
+$margin: 1%;
+
+.container {
+  width: $container-width;
+}
+
+.column {
+  background: #1abc9c;
+  height: 200px;
+  display: block;
+  float: left;
+  width: getColumnWidth($container-width,$column-count,$margin);
+  margin: 0 $margin;
+}
+```
+
+
 ### Links
 
 * This is the tutorial I`m following:

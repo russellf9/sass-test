@@ -15,14 +15,6 @@ p {
   width: 100%;
   height: 225px; }
 
-.column {
-  background: #1abc9c;
-  display: block;
-  float: left;
-  width: 23%;
-  height: 200px;
-  margin: 0 1%; }
-
 button {
   background: #2ecc71;
   border-radius: 3px;
@@ -73,3 +65,11 @@ a.myAnchor {
   @media (max-width: 767px) {
     .media-container {
       width: 100%; } }
+
+.column {
+  background: #1abc9c;
+  height: 200px;
+  display: block;
+  float: left;
+  width: 23%;
+  margin: 0 1%; }
