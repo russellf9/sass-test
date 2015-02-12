@@ -85,4 +85,52 @@ a.myAnchor {
     }
 }
 
+// Extends & Placeholders
+//.input {
+//    border-radius: 3px;
+//    border: 4px solid #ddd;
+//    color: #555;
+//    font-size: 17px;
+//    padding: 10px 20px;
+//    display: inline-block;
+//    min-width: 275px;
+//    outline: 0;
+//}
+
+//.error-input {
+//    @extend .input;
+//    border:4px solid $warning;
+//}
+
+//%input-style {
+//    font-size: 14px;
+//}
+//
+//input {
+//    @extend %input-style;
+//    color: black;
+//}
+
+
+%input-style {
+    border-radius: 3px;
+    color: #555;
+    font-size: 17px;
+    padding: 10px 20px;
+    display: inline-block;
+    min-width: 275px;
+    outline: 0;
+}
+
+.input {
+    @extend %input-style;
+    border: 4px solid #ddd;
+}
+
+.error-input {
+    @extend %input-style;
+    border:4px solid #e74c3c;
+}
+
+
 

@@ -133,8 +133,25 @@ We can import a .scss file using the @import directive:
 
 The directive does not need the extension, also if the SCSS file to be imported is not to be compiled the name can b prefixed with an underscore.
 
+#### Extends & Placeholders
 
+```
+.input {
+    border-radius: 3px;
+    border: 4px solid #ddd;
+    color: #555;
+    font-size: 17px;
+    padding: 10px 20px;
+    display: inline-block;
+    min-width: 275px;
+    outline: 0;
+}
 
+.error-input {
+    @extend .input;
+    border:4px solid $warning;
+}
+```
 
 
 ### Links
