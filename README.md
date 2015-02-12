@@ -123,6 +123,18 @@ de-nest, with the `@at-root` directive.
 }
 ```
 
+#### Imports and partials
+
+We can import a .scss file using the @import directive:
+
+```
+@import "_colors";
+```
+
+The directive does not need the extension, also if the SCSS file to be imported is not to be compiled the name can b prefixed with an underscore.
+
+
+
 
 
 ### Links
