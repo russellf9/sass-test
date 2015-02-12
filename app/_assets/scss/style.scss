@@ -21,7 +21,6 @@ p {
     color: $primaryColor;
 }
 
-
 // math
 $container-width: 100%;
 $container-height: 225px;
@@ -34,7 +33,7 @@ $margin: 1%;
 }
 
 .column {
-    background : $backgroundColor;
+    background: $backgroundColor;
     display: block;
     float: left;
     width: ( $container-width / $column-count ) - ( $margin * 2 );
@@ -111,7 +110,6 @@ a.myAnchor {
 //    color: black;
 //}
 
-
 %input-style {
     border-radius: 3px;
     color: #555;
@@ -129,8 +127,21 @@ a.myAnchor {
 
 .error-input {
     @extend %input-style;
-    border:4px solid #e74c3c;
+    border: 4px solid #e74c3c;
 }
 
+// Mixins
+@mixin media($queryString){
+    @media #{$queryString} {
+        @content;
+    }
+}
+
+.media-container {
+    width: 900px;
+    @include media("(max-width: 767px)"){
+        width: 100%;
+    }
+}
 
 

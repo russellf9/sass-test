@@ -67,3 +67,9 @@ a.myAnchor {
 
 .error-input {
   border: 4px solid #e74c3c; }
+
+.media-container {
+  width: 900px; }
+  @media (max-width: 767px) {
+    .media-container {
+      width: 100%; } }

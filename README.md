@@ -153,6 +153,29 @@ The directive does not need the extension, also if the SCSS file to be imported 
 }
 ```
 
+### Mixin
+
+```
+@mixin media($queryString){
+    @media #{$queryString} {
+      @content;
+    }
+}
+
+.container {
+    width: 900px;
+    @include media("(max-width: 767px)"){
+        width: 100%;
+    }
+}
+```
+
+The `@media` mod is exactly what I'm looking for the mobile responsiveness for the Magic Squares Mobile project.
+
+See:
+* [GETTING STARTED WITH SASS AND BREAKPOINT MIXIN](http://responsivedesign.is/develop/getting-started-with-sass)
+* [sass-mq](https://github.com/sass-mq/sass-mq)
+
 
 ### Links
 
