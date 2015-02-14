@@ -1,19 +1,12 @@
-var gulp        = require('gulp');
-var runSequence = require('run-sequence');
+var gulp        = require('gulp'),
+    runSequence = require('run-sequence'),
+    config = require('../../config');
 
 /**
  * Run all tasks needed for a build in defined order
  */
 gulp.task('build', function(callback) {
-    runSequence('delete',
-        [
-        //    //'jekyll',
-        'sass'
-            //,
-        //    //'scripts',
-        //    //'images',
-        //    //'copy:fonts'
-        ],
-        //'base64',
-        callback);
+    console.log('build!');
+    config.sass.IS_WATCH = true;
+    console.log('val: ',config.sass.IS_WATCH);
 });

@@ -4,7 +4,8 @@
 
 var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
-    config      = require('../../config');
+    config      = require('../../config'),
+    autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('basic-sass', function() {
     console.log('basic-sass src: ', config.sass.src);
@@ -14,7 +15,7 @@ gulp.task('basic-sass', function() {
 
     gulp.src(config.sass.src)
         .pipe(sass())
+        .pipe(autoprefixer(config.autoprefixer))
         .pipe(gulp.dest(config.sass.dest));
-
 
 });

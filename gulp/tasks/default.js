@@ -1,10 +1,15 @@
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    config = require('../config');
 
-/**
- * Start browsersync task and then watch files for changes
- */
-gulp.task('watch', ['browsersync'], function() {
 
+config.sass.IS_WATCH = false;
+
+gulp.task('watch', ['build'], function() {
+    config.sass.IS_WATCH = true;
+
+    console.log('val: ',config.sass.IS_WATCH);
+
+    gulp.watch(config.sass.src, ['basic-sass']);
 });
 
 gulp.task('default', ['watch']);
