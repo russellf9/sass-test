@@ -1,63 +1,86 @@
 @import "_colors";
+@import "../../bower_components/include-media/dist/_include-media.scss";
 
-// a map of settings
-$settings: (
-    maxWidth: 800px,
-    columns: 12,
-    margin: 15px,
-    breakpoints: (
-        xs: "(max-width : 480px)",
-        sm: "(max-width : 768px) and (min-width: 481px)",
-        md: "(max-width : 1024px)  and (min-width: 769px)",
-        lg: "(min-width : 1025px)"
-    )
-);
+.portrait, .landscape, .retina-2x, .retina-3x {
+    display: none;
+}
 
-// a mixin that renders our framework
-@mixin renderGridStyles($settings) {
-    .container {
-        padding-right: map-get($settings, "margin");
-        padding-left: map-get($settings, "margin");
-        margin-right: auto;
-        margin-left: auto;
-        max-width: map-get($settings, "maxWidth");
-    }
 
-    .row {
-        margin-right: map-get($settings, "margin") * -1;
-        margin-left: map-get($settings, "margin") * -1;
-    }
-    $breakpoints: map-get($settings, "breakpoints");
-    @each $key, $breakpoint in $breakpoints {
-        @include media($breakpoint) {
-            @include renderGrid($key, $settings);
-        }
+%game-container {
+    display: block;
+    font-size: 14px;
+    border-radius: 3px;
+    width: 300px;
+    height: 300px;
+    border: solid 1px $darkGrey;
+    background: $lightGrey;
+}
+
+// phone
+@include media(">=phone", "<tablet") {
+    .game-container {
+        @extend %game-container;
+        width: 300px;
+        height: 300px;
+        background: $pink;
     }
 }
 
-@mixin renderGrid($key, $settings) {
-    $i: 1;
-    @while $i <= map-get($settings, "columns") {
-        .col-#{$key}-#{$i} {
-            float: left;
-            width: 100% * $i / map-get($settings,"columns");
-        }
-        $i: $i+1;
+// tablet
+// iPad (first generation), iPad 2, iPad Mini (first generation) has 1024×768 pixels
+// iPad Mini (second generation), iPad (third generation), iPad (fourth generation), iPad Air has 2048×1536px
+
+// (orientation: landscape)
+
+@include media(">=tablet", '<2048px') {
+    .game-container {
+        @extend %game-container;
+        width: 600px;
+        height: 600px;
+        background: $green;
     }
 }
 
-@mixin media($queryString){
-    @media #{$queryString} {
-        @content;
+@media screen and (orientation:portrait) {
+    .portrait {
+        display: block;
     }
 }
 
-@include renderGridStyles($settings);
-
-
-p {
-    padding: 20px;
-    color: white;
-    background: #9b59b6;
-    margin: 20px;
+@media screen and (orientation:landscape) {
+    .landscape {
+        display: block;
+    }
 }
+
+// retina2x
+@include media("retina2x", ">=tablet") {
+    .retina-2x {
+        display: block;
+    }
+}
+
+// retina3x ( iPhone 6 Plus )
+@include media("retina3x", ">=tablet") {
+    .retina-3x {
+        display: block;
+    }
+}
+
+
+// large desktop
+@include media(">=2048px") {
+    .game-container {
+        @extend %game-container;
+
+    }
+}
+
+// print
+@include media("print") {
+    .game-container {
+        @extend %game-container;
+        background: $red;
+    }
+}
+

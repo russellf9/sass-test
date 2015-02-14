@@ -1,0 +1,28 @@
+{
+  "name": "sass-test",
+  "version": "0.0.0",
+  "homepage": "https://github.com/russellf9/sass-test",
+  "authors": [
+    "russellf9 <russell@factornine.co.uk>"
+  ],
+  "description": "A test for SASS",
+  "main": "index.html",
+  "keywords": [
+    "SASS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "include-media": "~1.1.2"
+  },
+  "devDependencies": {
+    "include-media": "~1.1.2"
+  }
+}
