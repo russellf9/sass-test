@@ -1,14 +1,35 @@
 @import "settings";
+@import "colors";
 
-// Function Directives
+// Function to calculate column width
 @function getColumnWidth($width, $columns, $margin) {
     @return ($width / $columns) - ($margin * 2);
 }
 
+// Function to calculate column height
+@function getColumnHeight($height, $margin) {
+    @return $height - ($margin * 2);
+}
+
+
 .column {
-    height: 100%;
+    height: getColumnHeight(map-get($settings, "column-height"), map-get($settings, "margin"));
     float: left;
-    width: getColumnWidth(100%, map-get($settings, "columns"), map-get($settings, "margin"));
-    margin: 0 map-get($settings, "margin");
+    width: getColumnWidth(map-get($settings, "column-width"), map-get($settings, "columns"), map-get($settings, "margin"));
+    margin: map-get($settings, "margin") map-get($settings, "margin");
     background: $warning;
+}
+
+// defines the row
+.row {
+    display: block;
+    border: solid 1px $green;
+    margin: map-get($settings, "margin") 0;
+}
+
+.controls-row {
+    position: absolute;
+    width: map-get($settings, "row-width");
+    bottom: map-get($settings, "margin");
+    border: solid 1px $pink;
 }

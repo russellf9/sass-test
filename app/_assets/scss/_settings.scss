@@ -2,5 +2,35 @@
 $settings: (
     maxWidth: 1024px,
     columns: 1,
-    margin: 1%
+    margin: 1%,
+    column-width: 100%,
+    column-height: 100%,
+    row-width: 100%,
+    board-dimension: 300px,
+    board-margin: 5px
 );
+
+@function getBoardDimension() {
+    @return map-get($settings, "board-dimension");
+}
+
+@function getBoardMargin() {
+    @return map-get($settings,"board-margin");
+}
+
+@function getGameRowHeight($media) {
+    $height:getBoardDimension();
+    $margin:getBoardMargin();
+    @if $media == 'phone' {
+        @return $height + $margin * 2 ;
+    }
+    @return ($height + $margin * 2) * 2;
+}
+
+@function getGameContainerDimension($media) {
+    $dimension:getBoardDimension();
+    @if $media == 'phone' {
+        @return $dimension;
+    }
+    @return $dimension * 2;
+}
