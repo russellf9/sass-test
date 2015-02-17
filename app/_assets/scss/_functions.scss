@@ -36,7 +36,17 @@
 
 // board-margin
 @function getBoardMarginDefault() {
-    @return map-get($settings,"board-margin");
+    @return map-get($settings, "board-margin");
+}
+
+// drag container height
+@function getDragContainerHeightDefault() {
+    @return map-get($settings, "drag-container-height");
+}
+
+// drag container margin
+@function getDragContainerMarginDefault() {
+    @return map-get($settings, "drag-container-margin");
 }
 
 // instruction-row-height
@@ -102,6 +112,30 @@
 // game board margin
 @function getBoardMargin($media) {
     $margin:getBoardMarginDefault();
+    @if $media == 'phone' {
+        @return $margin;
+    }
+    @return $margin * 2;
+}
+
+/* Drag container */
+
+// drag container width
+@function getDragContainerWidth($media) {
+    @return map-get($settings, "drag-container-width");
+}
+
+// drag container height
+@function getDragContainerHeight($media) {
+    $height:getDragContainerHeightDefault();
+    @if $media == "phone" {
+        @return $height;
+    }
+    @return $height * 2;
+}
+
+@function getDragContainerMargin($media) {
+    $margin:getDragContainerMarginDefault();
     @if $media == 'phone' {
         @return $margin;
     }

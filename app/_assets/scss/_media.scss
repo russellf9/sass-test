@@ -5,7 +5,9 @@
 @import "../../bower_components/include-media/dist/include-media";
 
 
-// set the defaults before we have the individual media queries
+/*
+ set the defaults before we have the individual media queries
+*/
 
 .portrait, .landscape, .retina-2x, .retina-3x {
     display: none;
@@ -28,6 +30,13 @@
     margin-top: getBoardMargin('phone');
 }
 
+%drag-container {
+    display: block;
+    background: $flesh;
+    width: getDragContainerWidth('phone');
+    height: getDragContainerHeight('phone');
+    margin-top: getDragContainerMargin('phone');
+}
 
 %game-row {
     height: getGameRowHeight('phone');
@@ -68,6 +77,12 @@
         height: getGameBoardDimension('phone');
         margin-top: getBoardMargin('phone');
     }
+    .drag-container {
+        @extend %drag-container;
+        width: getDragContainerWidth('phone');
+        height: getDragContainerHeight('phone');
+        margin-top: getDragContainerMargin('phone');
+    }
     .instructions-row {
         @extend %instructions-row;
         height: getInstructionRowHeight('phone');
@@ -106,6 +121,12 @@
         width: getGameBoardDimension('tablet');
         height: getGameBoardDimension('tablet');
         margin-top: getBoardMargin('tablet');
+    }
+    .drag-container {
+        @extend %drag-container;
+        width: getDragContainerWidth('tablet');
+        height: getDragContainerHeight('tablet');
+        margin-top: getDragContainerMargin('tablet');
     }
     .instructions-row{
         @extend %instructions-row;
@@ -166,6 +187,12 @@
         width: getGameBoardDimension('large-desktop');
         height: getGameBoardDimension('large-desktop');
         margin-top: getBoardMargin('large-desktop');
+    }
+    .drag-container {
+        @extend %drag-container;
+        width: getDragContainerWidth('large-desktop');
+        height: getDragContainerHeight('large-desktop');
+        margin-top: getDragContainerMargin('large-desktop');
     }
     .instructions-row{
         @extend %instructions-row;

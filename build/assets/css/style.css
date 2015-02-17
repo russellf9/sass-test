@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 /*
  functions which set class properties dynamically
 */
+/* Drag container */
 /*
  columns
  */
@@ -38,6 +39,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 /*
  functions which set class properties dynamically
 */
+/* Drag container */
 .column {
   height: 98%;
   float: left;
@@ -87,6 +89,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 /*
  functions which set class properties dynamically
 */
+/* Drag container */
 /*
  columns
  */
@@ -96,6 +99,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 /*
  functions which set class properties dynamically
 */
+/* Drag container */
 .column {
   height: 98%;
   float: left;
@@ -123,6 +127,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 /*
  functions which set class properties dynamically
 */
+/* Drag container */
+/*
+ set the defaults before we have the individual media queries
+*/
 .portrait, .landscape, .retina-2x, .retina-3x {
   display: none; }
 
@@ -140,6 +148,13 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   width: 150px;
   height: 150px;
   margin-top: 2px; }
+
+.drag-container {
+  display: block;
+  background: #ffbcaa;
+  width: 80%;
+  height: 100px;
+  margin-top: 5px; }
 
 .game-row {
   height: 310px;
@@ -168,6 +183,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
     width: 150px;
     height: 150px;
     margin-top: 2px; }
+  .drag-container {
+    width: 80%;
+    height: 100px;
+    margin-top: 5px; }
   .instructions-row {
     height: 50px; }
   .controls-row {
@@ -188,6 +207,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
     width: 300px;
     height: 300px;
     margin-top: 4px; }
+  .drag-container {
+    width: 80%;
+    height: 200px;
+    margin-top: 10px; }
   .instructions-row {
     height: 75px; }
   .controls-row {
@@ -223,6 +246,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
     width: 300px;
     height: 300px;
     margin-top: 4px; }
+  .drag-container {
+    width: 80%;
+    height: 200px;
+    margin-top: 10px; }
   .instructions-row {
     height: 100px; }
   .controls-row {
@@ -294,6 +321,46 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   -webkit-align-content: space-around;
       -ms-flex-line-pack: distribute;
           align-content: space-around; }
+
+/* Centers all in a row */
+.flex-container-all-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+/* Centers all in a column */
+.flex-container-all-column {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .center-text {
   text-align: center;
