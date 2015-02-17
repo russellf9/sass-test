@@ -4,6 +4,7 @@
 @import "../../bower_components/include-media/dist/_include-media.scss";
 
 
+// set the defaults before we have the individual media queries
 
 .portrait, .landscape, .retina-2x, .retina-3x {
     display: none;
