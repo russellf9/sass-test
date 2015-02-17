@@ -1,36 +1,10 @@
 @import "_colors";
-@import "_base.scss";
-@import "_grid.scss";
-@import "_media.scss";
+@import "_base";
+@import "_grid";
+@import "_media";
+@import "_flex";
 
 
-/* Center both horizontal and vertical */
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Center horizontal only */
-.flex-container-horizontal {
-    display: flex;
-    justify-content: center;
-}
-
-/* multiple - rows */
-.flex-container-multiple-rows {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* You can set flex-wrap and flex-direction individually */
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* Or do it all in one line with flex flow */
-    flex-flow: row wrap;
-    /* tweak the where items line up on the row */
-    /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
-    align-content: space-around;
-}
 
 .center-text {
     text-align: center;
