@@ -19,7 +19,6 @@ html {
 body {
     height: 100%;
     font-family: $base-font-family;
-    font-size: $base-font-size;
 }
 
 /**
@@ -48,10 +47,4 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
-/**
- Reset some fonts
- */
-h1, h2, h3 {
-    font-family: $fredoka;
-    color: $text-color;
-}
+

@@ -198,6 +198,17 @@ $margin: 1%;
 }
 ```
 
+### Dependencies
+
+```
+$ bower install include-media --save-dev
+```
+
+Note: _I had an issue with the media guries and had to hack the include media file._
+
+```
+$ bower install modular-scale --save-dev
+```
 
 ### Links
 

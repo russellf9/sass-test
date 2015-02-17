@@ -23,6 +23,7 @@
     "include-media": "~1.1.2"
   },
   "devDependencies": {
-    "include-media": "~1.1.2"
+    "include-media": "~1.1.2",
+    "modular-scale": "~2.0.6"
   }
 }

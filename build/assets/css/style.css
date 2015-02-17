@@ -116,6 +116,31 @@
 */
 /* Drag container */
 /**
+ Reset some fonts
+ */
+h1, h2, h3 {
+  font-family: 'fredoka_oneregular';
+  color: #222222; }
+
+body {
+  font-size: 1rem; }
+
+h5 {
+  font-size: 1.25rem; }
+
+h4 {
+  font-size: 1.61803rem; }
+
+h3 {
+  font-size: 2.02254rem; }
+
+h2 {
+  font-size: 2.61803rem; }
+
+h1 {
+  font-size: 3.27254rem; }
+
+/**
  * Reset some basic elements
  */
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure {
@@ -127,8 +152,7 @@ html {
 
 body {
   height: 100%;
-  font-family: Helvetica, sans-serif;
-  font-size: 16px; }
+  font-family: Helvetica, sans-serif; }
 
 /**
  * Basic styling
@@ -145,6 +169,24 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 h1, h2, h3 {
   font-family: 'fredoka_oneregular';
   color: #222222; }
+
+body {
+  font-size: 1rem; }
+
+h5 {
+  font-size: 1.25rem; }
+
+h4 {
+  font-size: 1.61803rem; }
+
+h3 {
+  font-size: 2.02254rem; }
+
+h2 {
+  font-size: 2.61803rem; }
+
+h1 {
+  font-size: 3.27254rem; }
 
 .column {
   height: 98%;
