@@ -1,15 +1,6 @@
 @import "settings";
 @import "colors";
-
-// Function to calculate column width
-@function getColumnWidth($width, $columns, $margin) {
-    @return ($width / $columns) - ($margin * 2);
-}
-
-// Function to calculate column height
-@function getColumnHeight($height, $margin) {
-    @return $height - ($margin * 2);
-}
+@import "functions";
 
 
 .column {
