@@ -1,9 +1,7 @@
-@import "_colors";
-@import "_base";
-@import "_grid";
-@import "_media";
-@import "_flex";
-
+@import "base";
+@import "grid";
+@import "media";
+@import "modules/all";
 
 
 .center-text {
