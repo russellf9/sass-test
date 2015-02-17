@@ -1,14 +1,6 @@
 @import "../modules/all";
-@import "../typography";
+@import "typography";
 
-$text-color: $darkGrey;
-
-$base-font-family: Times, sans-serif;
-$fredoka:  'fredoka_oneregular';
-
-$base-font-size: 16px;
-$base-line-height: 24px;
-$spacing-unit: $base-line-height;
 
 /**
  * Reset some basic elements
