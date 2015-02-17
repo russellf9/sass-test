@@ -20,6 +20,12 @@ body {
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   margin-bottom: 12px; }
 
+/*
+ utility functions to get settings
+ */
+/*
+    functions which set class properties dynamically
+*/
 .column {
   height: 98%;
   float: left;
@@ -60,6 +66,12 @@ body {
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   margin-bottom: 12px; }
 
+/*
+ utility functions to get settings
+ */
+/*
+    functions which set class properties dynamically
+*/
 .column {
   height: 98%;
   float: left;
@@ -87,11 +99,18 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   border-radius: 3px;
   width: 300px;
   height: 300px;
-  border: solid 1px #444444;
-  background: #444444; }
+  border: solid 1px #FFFF00; }
+
+.game-board {
+  display: block;
+  background: #444444;
+  width: 150px;
+  height: 150px;
+  margin-top: 2px; }
 
 .game-row {
-  height: 310px; }
+  height: 310px;
+  background: #2222DD; }
 
 .instructions-row {
   height: 50px; }
@@ -101,41 +120,49 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 
 .square {
   display: block;
-  width: 90px;
-  height: 90px;
-  margin: 5px; }
+  width: 45px;
+  height: 45px;
+  margin: 2px; }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .game-row {
+    height: 310px; }
   .game-container {
     width: 300px;
     height: 300px;
     background: #ff77ff; }
-  .game-row {
-    height: 310px; }
+  .game-board {
+    width: 150px;
+    height: 150px;
+    margin-top: 2px; }
   .instructions-row {
     height: 50px; }
   .controls-row {
     height: 45px; }
   .square {
-    width: 90px;
-    height: 90px;
-    margin: 5px; } }
+    width: 45px;
+    height: 45px;
+    margin: 2px; } }
 
 @media (min-width: 768px) and (max-width: 2047px) {
+  .game-row {
+    height: 620px; }
   .game-container {
     width: 600px;
     height: 600px;
     background: #22AA11; }
-  .game-row {
-    height: 620px; }
+  .game-board {
+    width: 300px;
+    height: 300px;
+    margin-top: 4px; }
   .instructions-row {
     height: 75px; }
   .controls-row {
     height: 90px; }
   .square {
-    width: 180px;
-    height: 180px;
-    margin: 10px; } }
+    width: 90px;
+    height: 90px;
+    margin: 4px; } }
 
 @media screen and (orientation: portrait) {
   .portrait {
@@ -154,19 +181,23 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
     display: block; } }
 
 @media (min-width: 2048px) {
+  .game-row {
+    height: 620px; }
   .game-container {
     width: 600px;
     height: 600px; }
-  .game-row {
-    height: 620px; }
+  .game-board {
+    width: 300px;
+    height: 300px;
+    margin-top: 4px; }
   .instructions-row {
     height: 100px; }
   .controls-row {
     height: 90px; }
   .square {
-    width: 180px;
-    height: 180px;
-    margin: 10px; } }
+    width: 90px;
+    height: 90px;
+    margin: 4px; } }
 
 @media print {
   .game-container {
@@ -187,6 +218,18 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
       -ms-flex-align: center;
           align-items: center; }
 
+/* Center horizontal only */
+.flex-container-horizontal {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+/* multiple - rows */
 .flex-container-multiple-rows {
   display: -webkit-box;
   display: -webkit-flex;
@@ -215,9 +258,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
           flex-flow: row wrap;
   /* tweak the where items line up on the row */
   /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
-  -webkit-align-content: flex-end;
-      -ms-flex-line-pack: end;
-          align-content: flex-end; }
+  -webkit-align-content: space-around;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around; }
 
 .center-text {
   text-align: center;

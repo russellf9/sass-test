@@ -6,15 +6,32 @@ $settings: (
     column-width: 100%,
     column-height: 100%,
     row-width: 100%,
-    board-dimension: 300px,
-    board-margin: 5px,
+    game-dimension: 300px,
+    game-margin: 5px,
+
+    board-dimension: 150px,
+    board-margin: 2px,
+
     instruction-row-height: 50px,
     controls-row-height: 45px,
-    square-dimension: 90px,
-    square-margin: 5px
+
+    square-dimension: 45px,
+    square-margin: 2px
 );
 
-// utility functions to get settings
+/*
+ utility functions to get settings
+ */
+
+// game-dimension
+@function getGameDimension() {
+    @return map-get($settings, "game-dimension");
+}
+
+// game-margin
+@function getGameMargin() {
+    @return map-get($settings, "game-margin");
+}
 
 // board-dimension
 @function getBoardDimension() {
@@ -22,7 +39,7 @@ $settings: (
 }
 
 // board-margin
-@function getBoardMargin() {
+@function getBoardMarginDefault() {
     @return map-get($settings,"board-margin");
 }
 
@@ -46,11 +63,14 @@ $settings: (
     @return map-get($settings, "square-margin");
 }
 
+/*
+    functions which set class properties dynamically
+*/
 
 // row - game
 @function getGameRowHeight($media) {
-    $height:getBoardDimension();
-    $margin:getBoardMargin();
+    $height:getGameDimension();
+    $margin:getGameMargin();
     @if $media == 'phone' {
         @return $height + $margin * 2 ;
     }
@@ -62,12 +82,31 @@ $settings: (
 
 // game container
 @function getGameContainerDimension($media) {
+    $dimension:getGameDimension();
+    @if $media == 'phone' {
+        @return $dimension;
+    }
+    @return $dimension * 2;
+}
+
+// game board for width and height
+@function getGameBoardDimension($media) {
     $dimension:getBoardDimension();
     @if $media == 'phone' {
         @return $dimension;
     }
     @return $dimension * 2;
 }
+
+// game board margin
+@function getBoardMargin($media) {
+    $margin:getBoardMarginDefault();
+    @if $media == 'phone' {
+        @return $margin;
+    }
+    @return $margin * 2;
+}
+
 
 // row - instruction
 @function getInstructionRowHeight($media) {

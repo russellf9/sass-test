@@ -11,6 +11,12 @@
     align-items: center;
 }
 
+/* Center horizontal only */
+.flex-container-horizontal {
+    display: flex;
+    justify-content: center;
+}
+
 /* multiple - rows */
 .flex-container-multiple-rows {
     display: flex;
@@ -23,7 +29,7 @@
     flex-flow: row wrap;
     /* tweak the where items line up on the row */
     /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
-    align-content: flex-end;
+    align-content: space-around;
 }
 
 .center-text {
