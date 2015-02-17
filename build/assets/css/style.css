@@ -99,6 +99,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 .controls-row {
   height: 45px; }
 
+.square {
+  width: 75px;
+  display: block; }
+
 @media (min-width: 320px) and (max-width: 767px) {
   .game-container {
     width: 300px;
@@ -109,7 +113,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .instructions-row {
     height: 50px; }
   .controls-row {
-    height: 45px; } }
+    height: 45px; }
+  .square {
+    width: 75px;
+    height: 75px; } }
 
 @media (min-width: 768px) and (max-width: 2047px) {
   .game-container {
@@ -121,7 +128,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .instructions-row {
     height: 75px; }
   .controls-row {
-    height: 90px; } }
+    height: 90px; }
+  .square {
+    width: 150px;
+    height: 150px; } }
 
 @media screen and (orientation: portrait) {
   .portrait {
@@ -148,7 +158,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .instructions-row {
     height: 100px; }
   .controls-row {
-    height: 90px; } }
+    height: 90px; }
+  .square {
+    width: 150px;
+    height: 150px; } }
 
 @media print {
   .game-container {
@@ -173,3 +186,12 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   text-align: center;
   margin: 0;
   padding: 0; }
+
+.pink {
+  background: #ff77ff; }
+
+.yellow {
+  background: #FFFF00; }
+
+.blue {
+  background: #2222DD; }

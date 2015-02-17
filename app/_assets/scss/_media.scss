@@ -32,6 +32,13 @@
     height: getControlsRowHeight('phone');
 }
 
+%square {
+    width: getSquareDimension('phone');
+    display: block;
+}
+
+
+
 
 // phone
 @include media(">=phone", "<tablet") {
@@ -52,6 +59,11 @@
     .controls-row {
         @extend %controls-row;
         height: getControlsRowHeight('phone');
+    }
+    .square {
+        @extend %square;
+        width: getSquareDimension('phone');
+        height: getSquareDimension('phone');
     }
 }
 
@@ -79,6 +91,11 @@
     .controls-row {
         @extend %controls-row;
         height: getControlsRowHeight('tablet');
+    }
+    .square {
+        @extend %square;
+        width: getSquareDimension('tablet');
+        height: getSquareDimension('tablet');
     }
 }
 
@@ -127,6 +144,11 @@
     .controls-row {
         @extend %controls-row;
         height: getControlsRowHeight('large-desktop');
+    }
+    .square {
+        @extend %square;
+        width: getSquareDimension('large-desktop');
+        height: getSquareDimension('large-desktop');
     }
 }
 
