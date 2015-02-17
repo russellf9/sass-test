@@ -100,8 +100,10 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   height: 45px; }
 
 .square {
-  width: 75px;
-  display: block; }
+  display: block;
+  width: 90px;
+  height: 90px;
+  margin: 5px; }
 
 @media (min-width: 320px) and (max-width: 767px) {
   .game-container {
@@ -115,8 +117,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .controls-row {
     height: 45px; }
   .square {
-    width: 75px;
-    height: 75px; } }
+    width: 90px;
+    height: 90px;
+    margin: 5px; } }
 
 @media (min-width: 768px) and (max-width: 2047px) {
   .game-container {
@@ -130,8 +133,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .controls-row {
     height: 90px; }
   .square {
-    width: 150px;
-    height: 150px; } }
+    width: 180px;
+    height: 180px;
+    margin: 10px; } }
 
 @media screen and (orientation: portrait) {
   .portrait {
@@ -160,8 +164,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .controls-row {
     height: 90px; }
   .square {
-    width: 150px;
-    height: 150px; } }
+    width: 180px;
+    height: 180px;
+    margin: 10px; } }
 
 @media print {
   .game-container {
@@ -181,6 +186,38 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+
+.flex-container-multiple-rows {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* You can set flex-wrap and flex-direction individually */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  /* Or do it all in one line with flex flow */
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  /* tweak the where items line up on the row */
+  /* valid values are: flex-start, flex-end, space-between, space-around, stretch */
+  -webkit-align-content: flex-end;
+      -ms-flex-line-pack: end;
+          align-content: flex-end; }
 
 .center-text {
   text-align: center;

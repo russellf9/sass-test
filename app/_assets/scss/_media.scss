@@ -33,11 +33,11 @@
 }
 
 %square {
-    width: getSquareDimension('phone');
     display: block;
+    width: getSquareDimension('phone');
+    height: getSquareDimension('phone');
+    margin: getSquareMargin('phone');
 }
-
-
 
 
 // phone
@@ -64,6 +64,7 @@
         @extend %square;
         width: getSquareDimension('phone');
         height: getSquareDimension('phone');
+        margin: getSquareMargin('phone');
     }
 }
 
@@ -96,6 +97,7 @@
         @extend %square;
         width: getSquareDimension('tablet');
         height: getSquareDimension('tablet');
+        margin: getSquareMargin('tablet');
     }
 }
 
@@ -149,6 +151,7 @@
         @extend %square;
         width: getSquareDimension('large-desktop');
         height: getSquareDimension('large-desktop');
+        margin: getSquareMargin('large-desktop');
     }
 }
 

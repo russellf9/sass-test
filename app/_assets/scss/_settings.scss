@@ -10,7 +10,8 @@ $settings: (
     board-margin: 5px,
     instruction-row-height: 50px,
     controls-row-height: 45px,
-    square-dimension: 75px
+    square-dimension: 90px,
+    square-margin: 5px
 );
 
 // utility functions to get settings
@@ -35,8 +36,14 @@ $settings: (
     @return map-get($settings, "controls-row-height");
 }
 
+// square default dimension
 @function getSquareDimensionDefault() {
     @return map-get($settings, "square-dimension");
+}
+
+// square default margin
+@function getSquareMarginDefault() {
+    @return map-get($settings, "square-margin");
 }
 
 
@@ -90,4 +97,13 @@ $settings: (
         @return $dimension;
     }
     @return $dimension * 2;
+}
+
+// square margin
+@function getSquareMargin($media) {
+    $margin:getSquareMarginDefault();
+    @if $media == 'phone' {
+        @return $margin;
+    }
+    @return $margin * 2;
 }
