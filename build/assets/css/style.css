@@ -140,6 +140,9 @@ h2 {
 h1 {
   font-size: 3.27254rem; }
 
+p {
+  font-size: 1rem; }
+
 /**
  * Reset some basic elements
  */
@@ -187,6 +190,9 @@ h2 {
 
 h1 {
   font-size: 3.27254rem; }
+
+p {
+  font-size: 1rem; }
 
 .column {
   height: 98%;
