@@ -19,6 +19,7 @@ html {
 body {
     height: 100%;
     font-family: $base-font-family;
+    font-size: $base-font-size;
 }
 
 /**
@@ -52,4 +53,5 @@ ul, ol, dl, figure,
  */
 h1, h2, h3 {
     font-family: $fredoka;
+    color: $text-color;
 }
