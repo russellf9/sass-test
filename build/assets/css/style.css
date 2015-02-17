@@ -96,6 +96,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
 .instructions-row {
   height: 50px; }
 
+.controls-row {
+  height: 45px; }
+
 @media (min-width: 320px) and (max-width: 767px) {
   .game-container {
     width: 300px;
@@ -104,7 +107,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .game-row {
     height: 310px; }
   .instructions-row {
-    height: 50px; } }
+    height: 50px; }
+  .controls-row {
+    height: 45px; } }
 
 @media (min-width: 768px) and (max-width: 2047px) {
   .game-container {
@@ -114,7 +119,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
   .game-row {
     height: 620px; }
   .instructions-row {
-    height: 75px; } }
+    height: 75px; }
+  .controls-row {
+    height: 90px; } }
 
 @media screen and (orientation: portrait) {
   .portrait {
@@ -133,10 +140,15 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure {
     display: block; } }
 
 @media (min-width: 2048px) {
+  .game-container {
+    width: 600px;
+    height: 600px; }
   .game-row {
     height: 620px; }
   .instructions-row {
-    height: 100px; } }
+    height: 100px; }
+  .controls-row {
+    height: 90px; } }
 
 @media print {
   .game-container {

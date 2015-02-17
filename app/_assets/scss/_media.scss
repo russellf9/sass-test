@@ -25,11 +25,11 @@
 }
 
 %instructions-row {
-    height: 50px;
+    height: getInstructionRowHeight('phone');
 }
 
-.controls-row {
-
+%controls-row {
+    height: getControlsRowHeight('phone');
 }
 
 
@@ -45,9 +45,13 @@
         @extend %game-row;
         height: getGameRowHeight('phone');
     }
-    .instructions-row{
+    .instructions-row {
         @extend %instructions-row;
-        height: 50px;
+        height: getInstructionRowHeight('phone');
+    }
+    .controls-row {
+        @extend %controls-row;
+        height: getControlsRowHeight('phone');
     }
 }
 
@@ -70,7 +74,11 @@
     }
     .instructions-row{
         @extend %instructions-row;
-        height: 75px;
+        height: getInstructionRowHeight('tablet');
+    }
+    .controls-row {
+        @extend %controls-row;
+        height: getControlsRowHeight('tablet');
     }
 }
 
@@ -105,15 +113,20 @@
 @include media(">=2048px") {
     .game-container {
         @extend %game-container;
-
+        width: getGameContainerDimension('large-desktop');
+        height: getGameContainerDimension('large-desktop');
     }
     .game-row {
         @extend %game-row;
-        height: 620px;
+        height: getGameRowHeight('large-desktop');
     }
     .instructions-row{
         @extend %instructions-row;
-        height: 100px;
+        height: getInstructionRowHeight('large-desktop');
+    }
+    .controls-row {
+        @extend %controls-row;
+        height: getControlsRowHeight('large-desktop');
     }
 }
 

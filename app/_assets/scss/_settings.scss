@@ -7,30 +7,73 @@ $settings: (
     column-height: 100%,
     row-width: 100%,
     board-dimension: 300px,
-    board-margin: 5px
+    board-margin: 5px,
+    instruction-row-height: 50px,
+    controls-row-height: 45px
 );
 
+// utility functions to get settings
+
+// board-dimension
 @function getBoardDimension() {
     @return map-get($settings, "board-dimension");
 }
 
+// board-margin
 @function getBoardMargin() {
     @return map-get($settings,"board-margin");
 }
 
+// instruction-row-height
+@function getInstructionRowHeightDefault() {
+    @return map-get($settings, "instruction-row-height");
+}
+
+// controls-row-height
+@function getControlsRowHeightDefault() {
+    @return map-get($settings, "controls-row-height");
+}
+
+
+// row - game
 @function getGameRowHeight($media) {
     $height:getBoardDimension();
     $margin:getBoardMargin();
     @if $media == 'phone' {
         @return $height + $margin * 2 ;
     }
+    @if $media =='tablet' {
+        @return ($height + $margin * 2) * 2;
+    }
     @return ($height + $margin * 2) * 2;
 }
 
+// game container
 @function getGameContainerDimension($media) {
     $dimension:getBoardDimension();
     @if $media == 'phone' {
         @return $dimension;
     }
     @return $dimension * 2;
+}
+
+// row - instruction
+@function getInstructionRowHeight($media) {
+    $height:getInstructionRowHeightDefault();
+    @if $media == 'phone' {
+        @return $height;
+    }
+    @if $media =='tablet' {
+        @return $height * 1.5;
+    }
+    @return $height * 2;
+}
+
+// row - controls
+@function getControlsRowHeight($media) {
+    $height:getControlsRowHeightDefault();
+    @if $media == 'phone' {
+        @return $height;
+    }
+    @return $height * 2;
 }
